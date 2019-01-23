@@ -1,0 +1,1 @@
+export const TOUCH_MENU = 'header/TOUCH_MENU';
