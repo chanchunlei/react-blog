@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Icon } from 'antd';
+import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
@@ -30,18 +31,24 @@ const Header = (props) => {
                             </button>
                         </div>
                     </HeaderNav>
-                    <Headernavigation className={props.toggle ? 'seeIt' : 'dispIt'}>
-                        <li><Icon type="home" theme="filled" /> 首页</li>
-                        <li><Icon type="appstore" theme="filled" /> 分类</li>
-                        <li><Icon type="hourglass" theme="filled" /> 历程</li>
-                        <li><Icon type="idcard" theme="filled" /> 关于</li>
-                        <li>
-                            <button className='signIn'>登录</button>
-                        </li>
-                        <li>
-                            <button className='signUp'>注册</button>
-                        </li>
-                    </Headernavigation>
+                    <CSSTransition
+                        in={props.toggle}
+                        timeout={200}
+                        classNames='listNav'
+                    >
+                        <Headernavigation className={props.toggle ? 'listNav, seeIt' : 'listNav, dispIt'}>
+                            <li><Icon type="home" theme="filled" /> 首页</li>
+                            <li><Icon type="appstore" theme="filled" /> 分类</li>
+                            <li><i className='iconfont icon-shijianzhou'/> 历程</li>
+                            <li><i className='iconfont icon-guanyuwomen2'/> 关于</li>
+                            <li>
+                                <button className='signIn'><i className='iconfont icon-denglu'/> 登录</button>
+                            </li>
+                            <li>
+                                <button className='signUp'><i className='iconfont icon-zhuce'/> 注册</button>
+                            </li>
+                        </Headernavigation>
+                    </CSSTransition>
                 </HeaderConent>
             </HeaderWrapper>
             <Modelblock onClick={props.handleToggle} className={props.toggle ? 'show' : 'disappear'}/>

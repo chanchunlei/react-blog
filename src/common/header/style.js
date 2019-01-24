@@ -51,17 +51,28 @@ export const Headernavigation = styled.ul`
    background: #fff;
    li { cursor: pointer; }
    @media screen and (max-width: 699px) {
+       &.listNav-enter {
+           transition: all 200ms ease-out;
+       }
+       &.listNav-enter-active {
+           transform: translateY(0px);
+       }
+       &.listNav-exit {
+           transition: all 200ms ease-in;
+       }
+       &.listNav-exit-active {
+           transform: translateY(-420px);
+       }
        &.seeIt{
-           display: block;
+           top: 61px;
        }
        &.dispIt{
-           display: none;
+           top: -420px;
        }
        width: 100%;
        line-height: 60px;
        text-align: center;
        position: absolute;
-       top: 61px;
        left: 0;
        z-index: 999;
        li {
@@ -83,9 +94,8 @@ export const Headernavigation = styled.ul`
        }
     }
    @media screen and (min-width: 700px){
-       display: block !important;
        height: 70px;
-       width: 75%;
+       width: 80%;
        float: right;
        line-height: 70px;
        text-align: right;

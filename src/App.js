@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { GlobalStyle } from './style.js';//公共css
+import { GlobalIcon } from './statics/iconfont/iconfont';//公共css
 import { BrowserRouter, Route } from 'react-router-dom';//使用路由
 import { Provider } from 'react-redux';//
 import store from './store';
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <Provider store={store}>
           <GlobalStyle/>
+          <GlobalIcon/>
           <BrowserRouter>
               <div>
                   <Header/>
