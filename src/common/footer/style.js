@@ -7,5 +7,6 @@ export const FooterWrapper = styled.div`
     color: #666;
     p {
        line-height: 2;
+       margin: 0;
     }
 `;

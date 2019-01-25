@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loadstatus from '../../common/loadstatus'
 import {
     HomeWrapper,
     HomeList,
@@ -55,6 +56,10 @@ class Home extends Component {
                         <img src={require('../../statics/vue.jpg')} alt=""/>
                     </ListImg>
                 </HomeList>
+                {
+                    //引入加载组件
+                }
+                <Loadstatus/>
             </HomeWrapper>
         )
     }

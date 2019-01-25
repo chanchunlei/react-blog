@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';//
 import store from './store';
 import Header from './common/header';
 import Home from './views/home';
+import Classify from './views/classify'
 import Footer from './common/footer';
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
               <div>
                   <Header/>
                   <Route path='/' exact component={Home}></Route>
+                  <Route path='/classify' exact component={Classify}></Route>
               </div>
           </BrowserRouter>
           <Footer />

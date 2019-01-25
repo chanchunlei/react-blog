@@ -21,7 +21,7 @@ export const HeaderImg = styled.div`
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    padding: 5px 0;
+    margin: 5px 0;
     @media screen and (max-width: 700px) {
        height: 50px;
        width: 50px;
@@ -35,12 +35,13 @@ export const HeaderNav = styled.div`
     float: right;
     @media screen and (max-width: 700px) {
         height: 60px;
-        line-height: 60px;
+        line-height: 57px;
         button {
             vertical-align: middle;
             background: #fff;
             border: none;
             outline: none;
+            line-height: 2;
         }
     }
     @media screen and (min-width: 700px){
@@ -49,6 +50,7 @@ export const HeaderNav = styled.div`
 `;
 export const Headernavigation = styled.ul`
    background: #fff;
+   margin: 0;
    li { cursor: pointer; }
    @media screen and (max-width: 699px) {
        &.listNav-enter {
@@ -81,9 +83,10 @@ export const Headernavigation = styled.ul`
            font-size: 14px;
            button {
                outline: none;
-               border: none;
+               border: 0px;
                background: #fff;
                cursor: pointer;
+               line-height: 2;
            }
            .signIn {
                color: #1890ff;
@@ -101,6 +104,7 @@ export const Headernavigation = styled.ul`
        text-align: right;
            li {
                display: inline-block;
+               vertical-align: top;
                color: #666;
                padding: 0 15px;
                font-size: 14px;
@@ -110,6 +114,7 @@ export const Headernavigation = styled.ul`
                    border-radius: 5px;
                    border: 1px solid #fff;
                    cursor: pointer;
+                   line-height: 1;
                }
                .signIn {
                    color: #1890ff;

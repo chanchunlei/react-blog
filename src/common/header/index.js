@@ -12,8 +12,6 @@ import {
     Headernavigation,
     Modelblock
 } from './style';
-const widthClient =  window.innerWidth;
-console.log(widthClient);
 const Header = (props) => {
     return (
         <Fragment>
@@ -37,8 +35,16 @@ const Header = (props) => {
                         classNames='listNav'
                     >
                         <Headernavigation className={props.toggle ? 'listNav, seeIt' : 'listNav, dispIt'}>
-                            <li><Icon type="home" theme="filled" /> 首页</li>
-                            <li><Icon type="appstore" theme="filled" /> 分类</li>
+                            <li>
+                                <Link to='/'>
+                                    <Icon type="home" theme="filled" /> 首页
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/classify'>
+                                    <Icon type="appstore" theme="filled" /> 分类
+                                </Link>
+                            </li>
                             <li><i className='iconfont icon-shijianzhou'/> 历程</li>
                             <li><i className='iconfont icon-guanyuwomen2'/> 关于</li>
                             <li>
