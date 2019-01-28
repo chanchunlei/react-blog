@@ -19,7 +19,7 @@ const Header = (props) => {
                 <HeaderConent>
                     <HeaderImg>
                         <Link to='/'>
-                            <img src={require('../../statics/fourstartball.jpg')} alt=""/>
+                            <img src={require('../../statics/imgs/fourstartball.jpg')} alt=""/>
                         </Link>
                     </HeaderImg>
                     <HeaderNav>
@@ -36,17 +36,25 @@ const Header = (props) => {
                     >
                         <Headernavigation className={props.toggle ? 'listNav, seeIt' : 'listNav, dispIt'}>
                             <li>
-                                <Link to='/'>
+                                <Link onClick={props.handleClose} to='/'>
                                     <Icon type="home" theme="filled" /> 首页
                                 </Link>
                             </li>
                             <li>
-                                <Link to='/classify'>
+                                <Link onClick={props.handleClose} to='/classify'>
                                     <Icon type="appstore" theme="filled" /> 分类
                                 </Link>
                             </li>
-                            <li><i className='iconfont icon-shijianzhou'/> 历程</li>
-                            <li><i className='iconfont icon-guanyuwomen2'/> 关于</li>
+                            <li>
+                                <Link onClick={props.handleClose} to='./timeaxis'>
+                                    <i className='iconfont icon-shijianzhou'/> 历程
+                                </Link>
+                            </li>
+                            <li>
+                                <Link onClick={props.handleClose} to='./about'>
+                                    <i className='iconfont icon-guanyuwomen2'/> 关于
+                                </Link>
+                            </li>
                             <li>
                                 <button className='signIn'><i className='iconfont icon-denglu'/> 登录</button>
                             </li>
@@ -57,7 +65,7 @@ const Header = (props) => {
                     </CSSTransition>
                 </HeaderConent>
             </HeaderWrapper>
-            <Modelblock onClick={props.handleToggle} className={props.toggle ? 'show' : 'disappear'}/>
+            <Modelblock onClick={props.handleClose} className={props.toggle ? 'show' : 'disappear'}/>
         </Fragment>
     )
 }
@@ -67,6 +75,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     handleToggle(){
         dispatch(actionCreators.doToggle());
+    },
+    handleClose(){
+        dispatch(actionCreators.doClose());
     }
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Header);

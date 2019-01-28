@@ -11,6 +11,8 @@ export default (state = defaultState, action) => {
             }else {
                 return state.set('toggle',true);
             }
+        case actionTypes.TOUCH_CLOSE:
+            return state.set('toggle',false);
         default:
             return state;
     }

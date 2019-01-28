@@ -30,7 +30,7 @@ class Home extends Component {
                         </div>
                     </ListWrapper>
                     <ListImg>
-                        <img src={require('../../statics/vue.jpg')} alt=""/>
+                        <img src={require('../../statics/imgs/vue.jpg')} alt=""/>
                     </ListImg>
                 </HomeList>
                 <HomeList>
@@ -53,7 +53,7 @@ class Home extends Component {
                         </div>
                     </ListWrapper>
                     <ListImg>
-                        <img src={require('../../statics/vue.jpg')} alt=""/>
+                        <img src={require('../../statics/imgs/vue.jpg')} alt=""/>
                     </ListImg>
                 </HomeList>
                 {

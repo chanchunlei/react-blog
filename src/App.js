@@ -4,10 +4,12 @@ import { GlobalIcon } from './statics/iconfont/iconfont';//公共css
 import { BrowserRouter, Route } from 'react-router-dom';//使用路由
 import { Provider } from 'react-redux';//
 import store from './store';
-import Header from './common/header';
-import Home from './views/home';
-import Classify from './views/classify'
-import Footer from './common/footer';
+import Header from './common/header';//头部
+import Home from './views/home';//首页
+import Classify from './views/classify'; //分类
+import Timeaxis from './views/timeaxis'; //历程
+import About from './views/about'; //历程
+import Footer from './common/footer';//底部
 class App extends Component {
   render() {
     return (
@@ -19,6 +21,8 @@ class App extends Component {
                   <Header/>
                   <Route path='/' exact component={Home}></Route>
                   <Route path='/classify' exact component={Classify}></Route>
+                  <Route path='/timeaxis' exact component={Timeaxis}></Route>
+                  <Route path='/about' exact component={About}></Route>
               </div>
           </BrowserRouter>
           <Footer />
