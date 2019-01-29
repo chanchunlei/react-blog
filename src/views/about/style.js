@@ -12,6 +12,14 @@ export const Mywrapper = styled.div`
         height: 350px;
         margin: 20px 0;
     }
+    @media screen and (max-width: 700px) {
+        img {
+            width: 220px;
+            height: 250px;
+            margin: 20px 0;
+        }
+    
+    }
     .title {
         text-align: center;
         font-size: 20px;

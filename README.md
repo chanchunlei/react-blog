@@ -13,3 +13,5 @@
 7. yarn add react-router-dom  安装路由模块；
 8. yarn add react-loadable  安装组件懒加载模块；
 9. yarn add immutable  安装immutable模块；
+10. npm install marked --save  安装markd模块；
+11. npm install highlight.js --save  安装highlight配合markd实现详情页代码高亮；
