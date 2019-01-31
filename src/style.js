@@ -51,4 +51,15 @@ export const GlobalStyle = createGlobalStyle`
       border-collapse: collapse;
       border-spacing: 0;
   }
+  .Jump,.Jump:focus,.Jump:hover {
+      color: #fff;
+      text-decoration: none;
+  }
+  .JumpNav {
+      color: #999;
+  }
+  .JumpNav:focus, .JumpNavActive {
+      color: #1890ff;
+      text-decoration: none;
+  }
 `;

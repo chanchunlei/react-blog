@@ -1,3 +1,4 @@
+//加载
 import React from 'react';
 import { connect } from 'react-redux'; //使用redux
 import { Spin, Divider } from 'antd';

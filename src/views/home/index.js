@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Loadstatus from '../../common/loadstatus'
+import Loadstatus from '../../common/loadstatus';
+import { Link } from 'react-router-dom';
 import {
     HomeWrapper,
     HomeList,
@@ -8,6 +9,7 @@ import {
 } from './style';
 class Home extends Component {
     render() {
+        //console.log(this.props);
         return (
             <HomeWrapper>
                 <HomeList>
@@ -26,7 +28,7 @@ class Home extends Component {
                             问题描述：最近一个项目中使用axios进行上传和下载，但是上传和下载是需要定义responseType和headers的，这样问题就出来了当你没有权限时候这个接口是抛出一个json数据的，同样上传格式错误也是一个json数据的；由于已经定义了responseType所以接到的数据是已经被转换的数据，它同样会进行下载这时候就需要我们判断返回数据时候的headers是否为文件以外的定义，然后将blob数据转化为json数据即可。
                         </div>
                         <div className='readAll'>
-                            阅读全文
+                            <Link className='Jump' to='./detail'>阅读全文</Link>
                         </div>
                     </ListWrapper>
                     <ListImg>

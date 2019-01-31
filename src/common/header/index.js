@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Icon } from 'antd';
 import { CSSTransition } from 'react-transition-group';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import {
@@ -36,24 +36,24 @@ const Header = (props) => {
                     >
                         <Headernavigation className={props.toggle ? 'listNav, seeIt' : 'listNav, dispIt'}>
                             <li>
-                                <Link onClick={props.handleClose} to='/'>
+                                <NavLink className='JumpNav' activeClassName={props.location.pathname === '/' ? 'JumpNavActive' : null} onClick={props.handleClose} to='/'>
                                     <Icon type="home" theme="filled" /> 首页
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link onClick={props.handleClose} to='/classify'>
+                                <NavLink className='JumpNav' activeClassName={props.location.pathname === '/classify' ? 'JumpNavActive' : null} onClick={props.handleClose} to='/classify'>
                                     <Icon type="appstore" theme="filled" /> 分类
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link onClick={props.handleClose} to='./timeaxis'>
+                                <NavLink className='JumpNav' activeClassName={props.location.pathname === '/timeaxis' ? 'JumpNavActive' : null} onClick={props.handleClose} to='/timeaxis'>
                                     <i className='iconfont icon-shijianzhou'/> 历程
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link onClick={props.handleClose} to='./about'>
+                                <NavLink className='JumpNav' activeClassName={props.location.pathname === '/about' ? 'JumpNavActive' : null} onClick={props.handleClose} to='/about'>
                                     <i className='iconfont icon-guanyuwomen2'/> 关于
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
                                 <button className='signIn'><i className='iconfont icon-denglu'/> 登录</button>
@@ -80,4 +80,4 @@ const mapDispatchToProps = dispatch => ({
         dispatch(actionCreators.doClose());
     }
 })
-export default connect(mapStateToProps,mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Header));

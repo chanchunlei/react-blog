@@ -15,3 +15,15 @@
 9. yarn add immutable  安装immutable模块；
 10. npm install marked --save  安装markd模块；
 11. npm install highlight.js --save  安装highlight配合markd实现详情页代码高亮；
+
+##### 小问题：
+
+路由中activeClassName不生效：activeClassName 无效是因为导航组件未被激活，也就是该组件的路由并未被刷新，很有可能题者公用导航，导航组件并未路由，写死固定在哪里。点击导航时，只是在切换body中的路由，导航组件未被更新，activeClassName是根据导航组件所在的路由去改变的。解决方法就是使用withRouter并确保是最外层：
+
+```
+import { Link, NavLink, withRouter } from 'react-router-dom';
+...
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Header));
+```
+
+此时即可获取到history,location,match属性了。

@@ -10,10 +10,12 @@ import Classify from './views/classify'; //分类
 import Timeaxis from './views/timeaxis'; //历程
 import About from './views/about'; //历程
 import Detail from './views/detail'; //历程
+import Sidebar from './common/sidebar';//侧边栏
+import Multibtn from './common/multibtn';//多功能按钮
 import Footer from './common/footer';//底部
 class App extends Component {
   render() {
-    return (
+      return (
       <Provider store={store}>
           <GlobalStyle/>
           <GlobalIcon/>
@@ -27,6 +29,8 @@ class App extends Component {
                   <Route path='/detail' exact component={Detail}></Route>
               </div>
           </BrowserRouter>
+          <Sidebar />
+          <Multibtn />
           <Footer />
       </Provider>
     );
