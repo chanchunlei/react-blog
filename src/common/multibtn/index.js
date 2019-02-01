@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Icon,BackTop } from 'antd';
+import { actionCreators } from './store'
 import {
     Btnwapper
 } from './style';
@@ -9,7 +10,11 @@ class Multibtn extends Component {
         return (
             <Btnwapper>
                 <div>
-                    <button onMouseOver={this.props.handlemouseover}><Icon type="menu-fold" /></button>
+                    <button onMouseEnter={this.props.handlemouseenter} onMouseLeave={this.props.handlemouseleave} onClick={this.props.handleclicktoggle}>
+                        {
+                            this.props.classtoggle ? <Icon type="close" /> : <Icon type={this.props.show ? "arrow-left" : "menu-fold"} />
+                        }
+                    </button>
                 </div>
                 <div>
                     <BackTop className='Up'>
@@ -21,11 +26,18 @@ class Multibtn extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-
+    show: state.multibtn.get('show'),
+    classtoggle: state.multibtn.get('classtoggle')
 })
 const mapDispatchToProps = (dispatch) => ({
-    handlemouseover() {},
-    handlemouseleabe() {},
-    handleclicktoggle() {}
+    handlemouseenter() {
+        dispatch(actionCreators.mouseenter());
+    },
+    handlemouseleave() {
+        dispatch(actionCreators.mouseleave());
+    },
+    handleclicktoggle() {
+        dispatch(actionCreators.clicktoggle());
+    }
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Multibtn);

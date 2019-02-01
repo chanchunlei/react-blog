@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -62,4 +62,17 @@ export const GlobalStyle = createGlobalStyle`
       color: #1890ff;
       text-decoration: none;
   }
+`;
+export const Rootwapper = styled.div`
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    &.show {
+        padding-right: 320px;
+        transition: all 0.3s;
+    }
+    &.hide {
+        padding-right: 320px;
+        transition: all 0.3s;
+    }
 `;

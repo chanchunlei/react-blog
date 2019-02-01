@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 export const Btnwapper = styled.div`
+    @media screen and (max-width: 1300px) {
+        display: none;
+    }
     position: fixed;
     bottom: 80px;
     right: 80px;
@@ -11,6 +14,7 @@ export const Btnwapper = styled.div`
         width: 35px;
         height: 35px;
         text-align: center;
+        cursor: pointer;
     }
     .Up {
         width: 35px;

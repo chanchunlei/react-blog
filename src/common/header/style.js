@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.div`
     line-height: 2;
 `;
 export const HeaderConent = styled.div`
-    max-width: 1000px;
+    max-width: 980px;
     margin: 0 auto;
     &::after{
         content:"";
